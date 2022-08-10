@@ -64,7 +64,7 @@ and you might pass it to CEU_ISING with the beta set to 2.0.
 
 RUBY_TACIT
 
-Packages required (use gem install): parallel (so you can run quickly on multiple cores), levenshtein (to compute the Levenshtein distribution), distribution (helper functions, just a fast version of factorial), random_graph (so you can try Watts-Strogatz)
+Packages required (use gem install): parallel (so you can run quickly on multiple cores), levenshtein, levenshtein-ffi, (to compute the Levenshtein distribution), distribution (helper functions, just a fast version of factorial), random_graph (so you can try Watts-Strogatz)
 
 construct_networks.rb provides commented ruby code showing how to create a network, and then use CEU_ISING to learn about the different potential equilibria (cultural practices) that it can support.
 
@@ -72,7 +72,7 @@ simple_teacher.rb shows the details of the greedy algorithm used to find the opt
 
 heatmap.rb shows how to scan the space of beta and tau to look at how effective teaching is.
 
-topology_tests.rb show how to try different topologies.
+topology_tests.rb shows how to try different topologies.
 
 copy_leaps.rb shows how to simulate outcomes from teaching in detail, as well as the details of how to compute Hamming distance, how to compare it to the copy-model, and the use of the Levenshtein distance.
 
