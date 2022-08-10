@@ -16,7 +16,7 @@ It requires the open source gsl libraries; you can install them (if you're on a 
 
 (B) find (locally) optimal solutions for teaching interventions, using a simple greedy algorithm.
 
-With these two piece of code in hand, it is then possible to reproduce the results reported in our paper. In some cases, the computational demands are quite intense; for example, finding the optimal teaching intervention can take up to two minutes on legacy hardware, so simulating evolution for a thousand generations can take up to a day of computer time. There are ways to speed this up (in particular, we found it useful to take advantage of parallel processing when computing the teaching interventions, and to cache results); for simplicitly, however, we do not present the optimized versions -- please contact Simon (sdedeo@andrew.cmu.edu) if you are interested in brainstorming how to get more advanced experiments running on your machine.
+With these two piece of code in hand, it is then possible to reproduce the results reported in our paper. In some cases, the computational demands are quite intense; for example, finding the optimal teaching intervention can take up to two minutes on legacy hardware, so simulating evolution for a thousand generations can take up to a day of computer time. There are ways to speed this up (in particular, we found it useful to take advantage of parallel processing when computing the teaching interventions, and to cache results); for simplicitly, however, we do not present the optimized versions -- please contact Simon (sdedeo[at]andrew.cmu.edu) if you are interested in brainstorming how to get more advanced experiments running on your machine.
 
 ******
 
