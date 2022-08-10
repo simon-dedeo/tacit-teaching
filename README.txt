@@ -1,7 +1,7 @@
 The Cultural Transmission of Tacit Knowledge
 Helena Miton (Santa Fe Institute), Simon DeDeo (Carnegie Mellon University & the Santa Fe Institute)
 https://arxiv.org/abs/2201.03582
-[PRE REVIEW CODE; please contact]
+[Paper in review! please contact]
 
 This Repository contains two collections of code. If you're having trouble, e-mail me (Simon) at sdedeo[at]andrew.cmu.edu and I can help. There's really nice spin-glass (ising) code, fast enough to explore with.
 
