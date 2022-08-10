@@ -1,4 +1,4 @@
-This Repository contains two collections of code. If you're having trouble, and are really into this stuff, e-mail me (Simon) at sdedeo[at]andrew.cmu.edu and I can help. There's really nice spin-glass (ising) code, fast enough to explore with.
+This Repository contains two collections of code. If you're having trouble e-mail me (Simon) at sdedeo[at]andrew.cmu.edu and I can help. There's really nice spin-glass (ising) code, fast enough to explore with.
 
 1. CEU_ISING: C Code that implements a version of the Metropolis-Hastings algorithm on spin glass networks, that enables you to...
 
