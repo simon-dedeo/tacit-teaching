@@ -1,4 +1,4 @@
-This Repository contains two collections of code. If you're having trouble e-mail me (Simon) at sdedeo[at]andrew.cmu.edu and I can help. There's really nice spin-glass (ising) code, fast enough to explore with.
+This Repository contains two collections of code. If you're having trouble, e-mail me (Simon) at sdedeo[at]andrew.cmu.edu and I can help. There's really nice spin-glass (ising) code, fast enough to explore with.
 
 1. CEU_ISING: C Code that implements a version of the Metropolis-Hastings algorithm on spin glass networks, that enables you to...
 
@@ -6,7 +6,9 @@ This Repository contains two collections of code. If you're having trouble e-mai
 
 (B) simulate the interaction of a learner (at dfferent values of beta) and a teacher (at different values of tau).
 
-This code is named CEU_ISING, after the Central European University where this work was begun. The calculations necessary to approximate the statisics of these systems are quite intense, and the code is thus is highly optimized ANSI C code that reads in files that describe the network and (potentially) the teacher interventions, and then runs from the command line. It require the gsl libraries; you can install them (if you're on a Mac) with sudo port install gsl.
+This code is named CEU_ISING, after the Central European University where this work was begun. The calculations necessary to approximate the statisics of these systems are quite intense, and the code is thus is highly optimized ANSI C code that reads in files that describe the network and (potentially) the teacher interventions, and then runs from the command line. 
+
+It requires the open source gsl libraries; you can install them (if you're on a Mac) with sudo port install gsl.
 
 2. RUBY_TACIT: Ruby code to
 
