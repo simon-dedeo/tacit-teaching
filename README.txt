@@ -1,12 +1,12 @@
-This Repository contains two collections of code:
+This Repository contains two collections of code. If you're having trouble, and are really into this stuff, e-mail me (Simon) at sdedeo[at]andrew.cmu.edu and I can help. There's really nice spin-glass (ising) code, fast enough to explore with.
 
-1. CEU_ISING: C Code that implements a version of the Metropolis-Hastings algorithm on spin glass networks, that enables you to
+1. CEU_ISING: C Code that implements a version of the Metropolis-Hastings algorithm on spin glass networks, that enables you to...
 
 (A) simulate the statistics of the facets for a learner at different values of beta -- this is useful to explore the space of practices.
 
 (B) simulate the interaction of a learner (at dfferent values of beta) and a teacher (at different values of tau).
 
-This code is named CEU_ISING, after the Central European University where this work was begun. The calculations necessary to approximate the statisics of these systems are quite intense, and the code is thus is highly optimized ANSI C code that reads in files that describe the network and (potentially) the teacher interventions, and then runs from the command line.
+This code is named CEU_ISING, after the Central European University where this work was begun. The calculations necessary to approximate the statisics of these systems are quite intense, and the code is thus is highly optimized ANSI C code that reads in files that describe the network and (potentially) the teacher interventions, and then runs from the command line. It require the gsl libraries; you can install them (if you're on a Mac) with sudo port install gsl.
 
 2. RUBY_TACIT: Ruby code to
 
@@ -39,7 +39,7 @@ For example, if you had a network of three nodes, with node 0 linking to 1 with 
 2 0 0.3 2 -0.4
 1 1 -0.4
 
-i.e, in words: three nodes. Node zero has one link, to node one, weight 0.3. Node one has two links; one to node zero with weight 0.3, one to node two with weight -0.4. Node two has one link, to node one with weight -0.4
+i.e, in words: three nodes. Node zero has one link, to node one, weight 0.3. Node one has two links; one to node zero with weight 0.3, one to node two with weight -0.4. Node two has one link, to node one with weight -0.4. Unless you're feeling really edgy, I suggest making all the links symmetric like that.
 
 The code will spit out a list of node values in order, e.g., "0 1 0"
 
