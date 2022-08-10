@@ -1,7 +1,5 @@
-# sudo gem2.5 install levenshtein-ffi
-# sudo gem2.5 install levenshtein
-# sudo gem2.5 install parallel
-# sudo gem2.5 install distribution
+# this will do four examples of the outcomes of teaching, for tau at 2, 4, 8, and 10, and beta at 2 (a key figure in the Supplementary)
+# it gives you both the hamming distance distribution for the tacit-teaching case, the copy-error case, and the same for the levenshtein
 
 load "helper_functions.rb"
 require 'levenshtein'
@@ -90,7 +88,7 @@ tau_hash=Hash.new
           }
 
           file=File.new("DATA/node_teacher.dat", 'w')
-          file.write("#{n}\n#{taught.collect { |i| i*tau }.join(" ")}")
+          file.write("#{n}\n#{taught.collect { |i| i*tau }.join(" ")}") ## note subtlety here -- we will have the teacher learn to teach with the same tau (whereas in simple_teacher.rb we allowed them to have super-strong tau)
           file.close
 
           n_samp=32*32
@@ -130,11 +128,6 @@ tau_hash=Hash.new
 
     distances=outcome_list.collect { |i| [current.hamming(i.split(" ")), Levenshtein.distance(current.join(""), i.split(" ").join(""))] };1
 
-    # irb(main):608:0> "011010001010000001001111010100".hamming("100101001101100010010111100110")
-    # => 17
-    # irb(main):609:0> Levenshtein.distance("011010001010000001001111010100", "100101001101100010010111100110")
-    # => 8
-
     p=distances.collect { |i| i[0] }.mean/30.0 ## probability of a flip in any particular facet
     def n_choose_k(n, k)
       Math.factorial(n) / (Math.factorial(k) * Math.factorial(n - k))
@@ -150,9 +143,18 @@ tau_hash=Hash.new
 
     set << [r, rp, rl, rpl]
     print "#{p}\n"
+    print "#{set[-1]}\n"
   }
   
   tau_hash[tau]=set
 }
 
-
+## an example when I run it, this is the start so it's doing a tau=2 case, students aren't great.
+# Best node set to teach: [14]; 30% of students learn within 5 hamming steps.
+# Best node set to teach: [14, 24]; 32% of students learn within 5 hamming steps.
+# Best node set to teach: [14, 24, 13]; 49% of students learn within 5 hamming steps.
+# Best node set to teach: [14, 24, 13, 21]; 55% of students learn within 5 hamming steps.
+# 0.2647430419921875
+# [[9.844060918897219e-05, 0.00106336156557565, 0.0055518071632770305, 0.01865763364615091, 0.04534670604597767, 0.08490524137904513, 0.12738217820176526, 0.15725602159518962, 0.16279105772670516, 0.1432834823512721, 0.108342994378659, 0.07092895421354273, 0.04043722301058328, 0.0201602488064757, 0.008814591391648797, 0.003385449346784266, 0.0011428073063649532, 0.0003388734423059282, 8.812391707729028e-05, 2.0040421422354852e-05, 3.968761043070316e-06, 6.804889352848132e-07, 1.0023659565945974e-07, 1.2553761423928488e-08, 1.3183966197874584e-09, 1.139312164129832e-10, 7.889051701987775e-12, 4.208297567911995e-13, 1.623510404283005e-14, 4.031554040085781e-16, 4.8387885301130435e-18], [0.470306396484375, 0.046356201171875, 0.001190185546875, 0.000762939453125, 0.001495361328125, 0.013671875, 0.00634765625, 0.003570556640625, 0.003021240234375, 0.01104736328125, 0.020904541015625, 0.094970703125, 0.004852294921875, 0.012939453125, 0.0810546875, 0.01153564453125, 0.044097900390625, 0.00506591796875, 0.00994873046875, 0.009368896484375, 0.00579833984375, 0.0601806640625, 0.009735107421875, 0.005096435546875, 0.00054931640625, 0.001617431640625, 0.0001220703125, 6.103515625e-05, 9.1552734375e-05, 0.005828857421875, 0.05841064453125], [3.0517578125e-05, 0.00115966796875, 0.005462646484375, 0.019439697265625, 0.0535888671875, 0.1031494140625, 0.162689208984375, 0.1923828125, 0.184844970703125, 0.137725830078125, 0.08392333984375, 0.03778076171875, 0.013519287109375, 0.0032958984375, 0.00091552734375, 9.1552734375e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.470306396484375, 0.046356201171875, 0.001190185546875, 0.000762939453125, 0.001495361328125, 0.013671875, 0.006439208984375, 0.010528564453125, 0.10552978515625, 0.03277587890625, 0.007781982421875, 0.060882568359375, 0.019500732421875, 0.1029052734375, 0.05224609375, 0.008941650390625, 0.058685302734375, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]]
+# ....
+# the first element of the list is distribution of Hamming distances the copy-error model (e.g., 9x10^-5 of the samples had a Hamming distance of zero in the copy error...), the second element of the list is the tacit-teaching, the third and fourth are the same except using Levenshtein distance.
