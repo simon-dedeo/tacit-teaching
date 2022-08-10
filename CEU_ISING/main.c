@@ -1,5 +1,7 @@
 #include "ising.h"
 
+// this is how you write code if you started your PhD in the year 2000.
+
 // format of input:
 // (1) name of connection network file
 //  first, number of nodes
@@ -25,30 +27,13 @@ int main (int argc, char *argv[]) {
     double *list, beta, beta_temp, energy_diff, running_abs_avg_modules, running_abs_avg, running_module_diff, running_random_diff, energy_module_false, energy_random_false, energy_all_true;
     double beta_sav, running_non_axioms, running_theorems, running_pagerank;
     
-	fn = fopen("/dev/urandom", "rb"); 		
+	fn = fopen("/dev/urandom", "rb"); 		// safe for parallel usage
 	if (fread(&r_seed, sizeof(r_seed), 1, fn) != 1) 
 		exit(-1); /* Failed! */
 	
 	T=gsl_rng_default;
 	r=gsl_rng_alloc(T);
 	gsl_rng_set(r, r_seed);
-    
-    // g=init_graph();
-    // read_graph(argv[1], g);
-    // read_fields(argv[2], g);
-    // beta=atof(argv[3]);
-    // for(i=0;i<g->max_deg;i++) {
-    //     g->exp_calc[i]=exp(-beta*(double)(i));
-    // }
-    // g->beta=beta;
-    // 
-    // clear_graph(g);
-    // 
-    // for(i=0;i<1000;i++) {
-    //     update_graph(g);  
-    // }
-    // 
-    // print_graph(g);        
 
 	switch((int)argv[1][1]) {
 		case 'm':
