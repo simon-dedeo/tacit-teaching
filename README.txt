@@ -3,6 +3,7 @@ This Repository contains two collections of code:
 1. CEU_ISING: C Code that implements a version of the Metropolis-Hastings algorithm on spin glass networks, that enables you to
 
 (A) simulate the statistics of the facets for a learner at different values of beta -- this is useful to explore the space of practices.
+
 (B) simulate the interaction of a learner (at dfferent values of beta) and a teacher (at different values of tau).
 
 This code is named CEU_ISING, after the Central European University where this work was begun. The calculations necessary to approximate the statisics of these systems are quite intense, and the code is thus is highly optimized ANSI C code that reads in files that describe the network and (potentially) the teacher interventions, and then runs from the command line.
@@ -10,6 +11,7 @@ This code is named CEU_ISING, after the Central European University where this w
 2. RUBY_TACIT: Ruby code to
 
 (A) construct networks, convert them into the specialized format required by CEU_ISING, and run teaching simulations.
+
 (B) find (locally) optimal solutions for teaching interventions, using a simple greedy algorithm.
 
 With these two piece of code in hand, it is then possible to reproduce the results reported in our paper. In some cases, the computational demands are quite intense; for example, finding the optimal teaching intervention can take up to two minutes on legacy hardware, so simulating evolution for a thousand generations can take up to a day of computer time. There are ways to speed this up (in particular, we found it useful to take advantage of parallel processing when computing the teaching interventions, and to cache results); for simplicitly, however, we do not present the optimized versions -- please contact Simon (sdedeo@andrew.cmu.edu) if you are interested in brainstorming how to get more advanced experiments running on your machine.
