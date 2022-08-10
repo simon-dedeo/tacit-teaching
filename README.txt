@@ -1,12 +1,14 @@
 This Repository contains two collections of code:
 
 1. CEU_ISING: C Code that implements a version of the Metropolis-Hastings algorithm on spin glass networks, that enables you to
+
 (A) simulate the statistics of the facets for a learner at different values of beta -- this is useful to explore the space of practices.
 (B) simulate the interaction of a learner (at dfferent values of beta) and a teacher (at different values of tau).
 
 This code is named CEU_ISING, after the Central European University where this work was begun. The calculations necessary to approximate the statisics of these systems are quite intense, and the code is thus is highly optimized ANSI C code that reads in files that describe the network and (potentially) the teacher interventions, and then runs from the command line.
 
 2. RUBY_TACIT: Ruby code to
+
 (A) construct networks, convert them into the specialized format required by CEU_ISING, and run teaching simulations.
 (B) find (locally) optimal solutions for teaching interventions, using a simple greedy algorithm.
 
@@ -68,7 +70,7 @@ heatmap.rb shows how to scan the space of beta and tau to look at how effective 
 
 topology_tests.rb show how to try different topologies.
 
-copy_leaps.rb shows how to simulate outcomes from teaching in detail, as well as the details of how to compute Hamming distance, how to compare it to the copy-model, and the use of the Levenshtein
+copy_leaps.rb shows how to simulate outcomes from teaching in detail, as well as the details of how to compute Hamming distance, how to compare it to the copy-model, and the use of the Levenshtein distance.
 
 ******
 
